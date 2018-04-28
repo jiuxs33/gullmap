@@ -44,8 +44,7 @@ public class IndexController extends BaseController
     @GetMapping("/system/main")
     public String main(Model model)
     {
-        model.addAttribute("version", gullMapConfig.getVersion());
-        return "main";
+        return "map";
     }
 
 }
