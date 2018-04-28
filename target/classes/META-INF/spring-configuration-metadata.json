@@ -1,0 +1,59 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.gullmap.framework.config.GenConfig",
+      "name": "gen",
+      "type": "com.gullmap.framework.config.GenConfig"
+    },
+    {
+      "sourceType": "com.gullmap.framework.config.GullMapConfig",
+      "name": "gullmap",
+      "type": "com.gullmap.framework.config.GullMapConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.gullmap.framework.config.GenConfig",
+      "name": "gen.author",
+      "description": "作者",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gullmap.framework.config.GenConfig",
+      "name": "gen.auto-remove-pre",
+      "description": "自动去除表前缀，默认是true",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gullmap.framework.config.GenConfig",
+      "name": "gen.package-name",
+      "description": "生成包路径",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gullmap.framework.config.GenConfig",
+      "name": "gen.table-prefix",
+      "description": "表前缀(类名不会包含表前缀)",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gullmap.framework.config.GullMapConfig",
+      "name": "gullmap.copyright-year",
+      "description": "版权年份",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gullmap.framework.config.GullMapConfig",
+      "name": "gullmap.name",
+      "description": "项目名称",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gullmap.framework.config.GullMapConfig",
+      "name": "gullmap.version",
+      "description": "版本",
+      "type": "java.lang.String"
+    }
+  ]
+}
