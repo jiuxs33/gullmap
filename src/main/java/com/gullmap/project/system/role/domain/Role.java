@@ -19,7 +19,7 @@ public class Role extends PageDomain
     /** 角色权限 */
     private String roleKey;
     /** 角色排序 */
-    private String roleSort;
+    private int roleSort;
     /** 角色状态:0正常,1禁用 */
     private int status;
     /** 创建者 */
@@ -67,12 +67,12 @@ public class Role extends PageDomain
         this.roleKey = roleKey;
     }
 
-    public String getRoleSort()
+    public int getRoleSort()
     {
         return roleSort;
     }
 
-    public void setRoleSort(String roleSort)
+    public void setRoleSort(int roleSort)
     {
         this.roleSort = roleSort;
     }

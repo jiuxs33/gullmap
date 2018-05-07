@@ -1,5 +1,7 @@
 package com.gullmap.common.utils;
 
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,11 +63,12 @@ public class SystemLogUtils
         LogininforServiceImpl logininforService = SpringUtils.getBean(LogininforServiceImpl.class);
         Logininfor logininfor = new Logininfor();
         logininfor.setLoginName(username);
-        logininfor.setStatus(status);
+        logininfor.setStatus(Integer.valueOf(status));
         logininfor.setIpaddr(ShiroUtils.getIp());
         logininfor.setBrowser(browser);
         logininfor.setOs(os);
         logininfor.setMsg(message);
+        logininfor.setLoginTime(new Date());
         logininforService.insertLogininfor(logininfor);
     }
 }

@@ -16,7 +16,7 @@ public class Logininfor extends PageDomain
     /** 用户账号 */
     private String loginName;
     /** 登录状态 0成功 1失败 */
-    private String status;
+    private int status;
     /** 登录IP地址 */
     private String ipaddr;
     /** 浏览器类型 */
@@ -48,12 +48,12 @@ public class Logininfor extends PageDomain
         this.loginName = loginName;
     }
 
-    public String getStatus()
+    public int getStatus()
     {
         return status;
     }
 
-    public void setStatus(String status)
+    public void setStatus(int status)
     {
         this.status = status;
     }

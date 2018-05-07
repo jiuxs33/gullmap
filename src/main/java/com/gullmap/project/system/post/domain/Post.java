@@ -16,7 +16,7 @@ public class Post extends PageDomain
     /** 岗位名称 */
     private String postName;
     /** 岗位排序 */
-    private String postSort;
+    private int postSort;
     /** 状态（0正常 1停用） */
     private int status;
     /** 用户是否存在此岗位标识 默认不存在 */
@@ -62,12 +62,12 @@ public class Post extends PageDomain
         this.postName = postName;
     }
 
-    public String getPostSort()
+    public int getPostSort()
     {
         return postSort;
     }
 
-    public void setPostSort(String postSort)
+    public void setPostSort(int postSort)
     {
         this.postSort = postSort;
     }

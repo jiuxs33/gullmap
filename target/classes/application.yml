@@ -37,10 +37,11 @@ spring:
   http:
     multipart:
       max-file-size: 30Mb
-      max-request-size: 30Mb
-  devtools:
-    restart:
-      enabled: true    
+      max-request-size: 30Mb  
+  data:
+    solr:
+      host: http://192.168.1.235:8983/solr/map
+      
 # MyBatis
 mybatis:
     # 搜索指定包别名
@@ -76,7 +77,7 @@ gen:
   # 作者
   author: gullmap
   # 默认生成包路径 module 需改成自己的模块名称 如 system monitor tool
-  packageName: com.gullmap.project.module
+  packageName: com.gullmap.project.bussiness
   # 自动去除表前缀，默认是true
   autoRemovePre: true
   # 表前缀(类名不会包含表前缀)

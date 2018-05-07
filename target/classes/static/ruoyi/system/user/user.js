@@ -12,10 +12,6 @@ function queryUserList() {
             checkbox: true
         },
         {
-            field: 'userId',
-            title: '用户ID'
-        },
-        {
             field: 'loginName',
             title: '登录名称'
         },

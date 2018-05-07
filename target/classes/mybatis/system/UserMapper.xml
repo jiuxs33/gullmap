@@ -89,7 +89,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  			<if test="status !=null">status = #{status},</if>
  			<if test="refuseDes != null and refuseDes != ''">refuse_des = #{refuseDes},</if>
  			<if test="updateBy != null and updateBy != ''">update_by = #{updateBy},</if>
- 			update_time = sysdate()
+ 			update_time = now()::timestamp(0) 
  		</set>
  		where 1=1
  		<if test="userId != null and userId  != ''">and user_id = #{userId}</if>
@@ -108,7 +108,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  			<if test="status !=null and status != ''">status,</if>
  			<if test="refuseDes != null and refuseDes != ''">refuse_des,</if>
  			<if test="createBy != null and createBy != ''">create_by,</if>
- 			create_time
+ 			create_time,
+ 			update_time
  		)values(
  			<if test="userId != null and userId != ''">#{userId},</if>
  			<if test="deptId != null and deptId != ''">#{deptId},</if>
@@ -121,7 +122,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  			<if test="status !=null and status != ''">#{status},</if>
  			<if test="refuseDes != null and refuseDes != ''">#{refuseDes},</if>
  			<if test="createBy != null and createBy != ''">#{createBy},</if>
- 			sysdate()
+ 			now()::timestamp(0),
+ 			now()::timestamp(0)
  		)
 	</insert>
 	

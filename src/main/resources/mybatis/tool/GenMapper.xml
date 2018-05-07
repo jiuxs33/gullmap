@@ -18,24 +18,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 
 	<select id="selectTableList" parameterType="TableInfo" resultMap="TableInfoResult">
-		select table_name, table_comment, create_time, update_time
-		from information_schema.tables
-		where table_comment <![CDATA[ <> ]]> '' and table_schema = (select database())
+		select relname as table_name,cast(obj_description(relfilenode,'pg_class') as varchar) as table_comment from pg_class c 
+				where  relkind = 'r' and relname not like 'pg_%' and relname not like 'sql_%'
 		<if test="searchValue != null and searchValue != ''">
-			AND table_name = #{searchValue}
+			AND relname like '#{searchValue}%' 
 		</if>
+		ORDER BY relname
 	</select>
 	
 	<select id="selectTableByName" parameterType="String" resultMap="TableInfoResult">
-		select table_name, table_comment, create_time, update_time
-		from information_schema.tables
-		where table_comment <![CDATA[ <> ]]> '' and table_schema = (select database())
-		and table_name = #{tableName}
+		select relname as table_name,cast(obj_description(relfilenode,'pg_class') as varchar) as table_comment from pg_class c 
+				where  relkind = 'r' and relname not like 'pg_%' and relname not like 'sql_%'
+					and relname = #{tableName}
 	</select>
 	
 	<select id="selectTableColumnsByName" parameterType="String" resultMap="ColumnInfoResult">
-		select column_name, data_type, column_comment from information_schema.columns
-        where table_name = #{tableName} and table_schema = (select database()) order by ordinal_position
+		SELECT col_description(a.attrelid,a.attnum) as column_comment,format_type(a.atttypid,a.atttypmod) as data_type,a.attname as column_name   
+          FROM pg_class as c,pg_attribute as a where c.relname = #{tableName} and a.attrelid = c.oid and a.attnum>0
 	</select>
 
 </mapper> 

@@ -96,7 +96,11 @@ public class OnlineSessionDAO extends EnterpriseCacheSessionDAO
         {
             onlineSession.resetAttributeChanged();
         }
-        onlineService.saveOnline(UserOnline.fromOnlineSession(onlineSession));
+        UserOnline online = UserOnline.fromOnlineSession(onlineSession);
+        UserOnline isExist = onlineService.selectOnlineById(online.getSessionId());
+        if(isExist==null){
+        	 onlineService.saveOnline(UserOnline.fromOnlineSession(onlineSession));
+        }
     }
 
     /**

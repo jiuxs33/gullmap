@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.gullmap.project.monitor.online.dao.IUserOnlineDao">
 
 	<resultMap type="UserOnline" id="UserOnlineResult">
-		<id     property="sessionId"         column="sessionId"         />
+		<id     property="sessionId"         column="sessionid"         />
 		<result property="loginName"         column="login_name"        />
 		<result property="deptName"          column="dept_name"         />
 		<result property="ipaddr"            column="ipaddr"            />
@@ -32,12 +32,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<insert id="saveOnline" parameterType="UserOnline">
-		replace into sys_user_online(sessionId, login_name, dept_name, ipaddr, browser, os, status, start_timestsamp, last_access_time, expire_time) 
+		insert into sys_user_online(sessionid, login_name, dept_name, ipaddr, browser, os, status, start_timestsamp, last_access_time, expire_time) 
         values (#{sessionId}, #{loginName}, #{deptName}, #{ipaddr}, #{browser}, #{os}, #{status}, #{startTimestamp}, #{lastAccessTime}, #{expireTime})
 	</insert>
 	
  	<delete id="deleteOnlineById" parameterType="String">
- 		delete from sys_user_online where sessionId = #{sessionId}
+ 		delete from sys_user_online where sessionid = #{sessionId}
  	</delete>
  	
  	<select id="selectUserOnlineList" parameterType="UserOnline" resultMap="UserOnlineResult">

@@ -14,7 +14,7 @@ public class Dept
     /** 部门名称 */
     private String deptName;
     /** 显示顺序 */
-    private String orderNum;
+    private int orderNum;
     /** 负责人 */
     private String leader;
     /** 联系电话 */
@@ -64,12 +64,12 @@ public class Dept
         this.deptName = deptName;
     }
 
-    public String getOrderNum()
+    public int getOrderNum()
     {
         return orderNum;
     }
 
-    public void setOrderNum(String orderNum)
+    public void setOrderNum(int orderNum)
     {
         this.orderNum = orderNum;
     }

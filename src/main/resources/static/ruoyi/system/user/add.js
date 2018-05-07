@@ -90,7 +90,7 @@ function add() {
 /*用户管理-新增-选择部门树*/
 function selectDeptTree() {
 	var treeId = $("#treeId").val();
-	var deptId = treeId == null || treeId == "" ? "100" : treeId;
+	var deptId = treeId == null || treeId == "" ? "1" : treeId;
 	var url = "/system/dept/selectDeptTree/" + deptId;
     layer_show("选择部门", url, '380', '380');
 }

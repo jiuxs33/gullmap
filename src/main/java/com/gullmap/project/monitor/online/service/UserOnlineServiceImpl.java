@@ -1,5 +1,6 @@
 package com.gullmap.project.monitor.online.service;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 import org.apache.shiro.session.Session;
@@ -120,6 +121,7 @@ public class UserOnlineServiceImpl implements IUserOnlineService
     public List<UserOnline> selectOnlineByExpired(Date expiredDate)
     {
         String lastAccessTime = DateUtils.dateTime("yyyy-MM-dd HH:mm:ss", expiredDate);
-        return userOnlineDao.selectOnlineByExpired(lastAccessTime);
+        Timestamp time = Timestamp.valueOf(lastAccessTime);
+        return userOnlineDao.selectOnlineByExpired(time);
     }
 }

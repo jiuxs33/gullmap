@@ -1,5 +1,6 @@
 package com.gullmap.project.monitor.online.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.gullmap.project.monitor.online.domain.UserOnline;
@@ -49,5 +50,5 @@ public interface IUserOnlineDao
      * @param lastAccessTime 过期时间
      * @return 会话集合
      */
-    public List<UserOnline> selectOnlineByExpired(String lastAccessTime);
+    public List<UserOnline> selectOnlineByExpired(Timestamp lastAccessTime);
 }

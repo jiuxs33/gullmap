@@ -2,10 +2,10 @@
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: org.postgresql.Driver
     #url: jdbc:mysql://10.213.24.45:3306/ry?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-    url: jdbc:mysql://localhost:3306/gullmap?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-    username: root
+    url: jdbc:postgresql://192.168.1.234:5432/solr_0815
+    username: postgres
     password: admin
     # 初始化大小，最小，最大
     initialSize: 1
